@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Hello world</title>
+    <meta charset="utf-8">
+    <script type="text/javascript" src="brython.js"></script>
+
+</head>
+
+<body onload="brython(1)">
+<p>Tu nombre es : <input id="zone" autocomplete="off">
+<button id="test">click !</button>
+
+<script type="text/python">
+from browser import document, alert
+def echo(ev):
+    alert("Hello {} !".format(document["zone"].value))
+
+document["test"].bind("click", echo)
+</script>
+</body>
+</html>
